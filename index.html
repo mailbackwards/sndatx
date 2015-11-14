@@ -48,14 +48,14 @@
         <h3 class="top-tag">This Week in <a href="#">Higher Education</a></h3>
 		<h1>Racism on Campus</h1>
 		<p>Gastropub cornhole celiac cronut. Hoodie tofu cornhole four loko, slow-carb pour-over next level chillwave food truck williamsburg butcher bespoke heirloom. Bicycle rights tousled vinyl hoodie, green juice artisan keffiyeh. Four dollar toast artisan brooklyn, chartreuse typewriter neutra drinking vinegar vegan post-ironic roof party intelligentsia salvia franzen narwhal. Beard 3 wolf moon flexitarian disrupt. Chambray yr kale chips, selfies messenger bag beard bicycle rights fixie humblebrag. Paleo migas tilde poutine bitters banjo brunch.</p>
-		
+
         <footer class="row">
 	    	<div class="col-lg-6 col-sm-12 host">
 		    	<h3>Your Host</h3>
 			    <img class="thumbnail" src="http://placekitten.com/g/40/40" />
 			    <p><strong>Jane Smith</strong><br>
 				Higher Education Reporter</p>
-				
+
 	    	</div>
 	    	<div class="col-lg-6 col-sm-12 contributors">
 		    	<h3>37 Contributors</h3>
@@ -101,9 +101,32 @@
 	    	</div>
         </footer>
     </section>
-    
+
     <hr>
-    
+
+    <div class="container">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="inputUsername" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control col-sm-10" id="inputUsername" name="inputUsername" placeholder="What's your name?">
+          </div>
+        </div>
+        <div class="form-group has-feedback">
+          <label for="inputReason" class="col-sm-2 control-label">Reason</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control col-sm-10" id="inputReason" name="inputReason" placeholder="How was this useful to you?">
+          </div>
+        </div>
+        <div class="form-group has-feedback">
+          <label for="inputLink" class="col-sm-2 control-label">Link</label>
+          <div class="col-sm-10">
+            <input type="url" class="form-control" id="inputLink" name="inputLink" placeholder="What's the URL?">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
 
     <div class="container">
       <div class="row">

@@ -36,3 +36,8 @@
 #topic-header .contributors img:hover {
   opacity: 0.8;
 }
+
+#emailMeLabel {
+  font-weight: bold;
+}
+

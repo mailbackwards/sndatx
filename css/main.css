@@ -1,3 +1,18 @@
+body {
+  padding-top: 0;
+}
+.navbar {
+  border-bottom: 1px solid #ff9900;
+  background-color: #fff;
+  margin-bottom: 0;
+}
+.navbar-brand {
+  background: url('../img/logo.png') no-repeat;
+  width: 250px;
+}
+h1 {
+  margin-top: 0;
+}
 .top-tag {
   text-transform: uppercase;
   font-size: 18px;
@@ -11,6 +26,7 @@
 }
 #topic-header {
   padding: 20px;
+  margin-bottom: 20px;
   background-color: #f9f9f9;
   border-bottom: 8px solid #ddd;
 }
@@ -35,4 +51,44 @@
 }
 #topic-header .contributors img:hover {
   opacity: 0.8;
+}
+article,
+article.content-inner  {
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+article img {
+  float: left;
+  margin-right: 10px;
+}
+article header {
+  clear: both;
+  background-color: #ededed;
+  padding: 10px 20px 5px;
+}
+article header p.contributor {
+  color: #999;
+  margin-bottom: 16px;
+  padding-top: 2px;
+}
+article header p.contributor .role {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ff9900; 
+}
+article.content-inner .content {
+  clear: both;
+  padding: 20px;
+  overflow: hidden;
+}
+article.content-inner .content img {
+  margin-right: 20px;
+}
+article.content-inner p.quote {
+  font-size: 21px;
+  font-style: italic;
+  color: #666;
+}
+blockquote {
+  border-left: none;
 }

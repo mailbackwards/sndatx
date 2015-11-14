@@ -7,27 +7,26 @@ function validateInputSize() {
     }
 };
 
-function renderYoutube(url) {
-
-}
-function renderTwitter(url) {
-    console.log('HERE');
-    $.getJSON('http://api.twitter.com/1/statuses/oembed.json?callback=?&url='+url, {
-        format: 'json',
-        dataType: 'jsonp',
-    })
-    .done(function(data) {
-        return data.html;
-    });
+function appendShare(embed_copy, meta) {
+    var headerCopy = '<div class="col-lg-4 col-sm-12"><article class="tweet">'
+    headerCopy += '<header><img src="http://fillmurray.com/25/25" />'
+    headerCopy += '<p class="contributor">Recommended by <span class="name">'+meta['userName']+' '+meta['userLastname']+' on November 15, 2015.</p>'
+    headerCopy += '<p>'+meta['reason']+'</p></header>'
+    headerCopy += '<div class="content">'+embed_copy+'</div></article></div>'
+    console.log(headerCopy);
+    $('article').last().append(headerCopy);
 }
 
 function scrapeLink() {
     event.preventDefault();
-    var userName = $('#inputUserName').val();
-        userEmail = $('#inputUserEmail').val();
-        link = $('#inputLink').val();
-        reason = $('#inputReason').val();
-        embed = '';
+    var meta = {
+        'userName': $('#inputUsername').val(),
+        'userLastname': $('#inputUserLastname').val(),
+        'userEmail': $('#inputUserEmail').val(),
+        'reason': $('#inputReason').val(),
+    }
+    var link = $('#inputLink').val();
+    var embed = '';
 
     if (link.indexOf('youtube.com') > -1 || link.indexOf('youtu.be') > -1) {
         $.getJSON('https://noembed.com/embed?callback=?', {
@@ -36,6 +35,7 @@ function scrapeLink() {
             })
             .done(function(data) {
                 embed = data.html;
+                appendShare(embed, meta);
             })
     } else if (link.indexOf('twitter.com') > -1 || link.indexOf('t.co') > -1) {
         $.getJSON('http://api.twitter.com/1/statuses/oembed.json?callback=?&url='+link, {
@@ -44,10 +44,11 @@ function scrapeLink() {
             })
             .done(function(data) {
                 embed = data.html;
+                appendShare(embed, meta);
             });
     } else {
         embed = "<div><p>"+link+"</p></div>";
-        console.log(embed);
+        appendShare(embed, meta);
     }
     //console.log(embed);
 };

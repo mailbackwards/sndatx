@@ -109,3 +109,9 @@ blockquote {
   color: #999;
   font-style: italic;
 }
+.twitter-follow-button {
+  display: inline-block;
+  position: relative !important;
+  top: 8px;
+  margin-left: 10px;
+}

@@ -101,8 +101,7 @@ article.content-inner p.quote {
 blockquote {
   border-left: none;
 }
-.col-lg-4 .source,
-.col-lg-6 .source {
+.source {
   text-align: right;
   color: #999;
   font-style: italic;

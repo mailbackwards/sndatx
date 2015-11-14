@@ -85,6 +85,9 @@ article header p.contributor .role {
   font-weight: 800;
   color: #ff9900;
 }
+article header p.contributor .role.contributor {
+  color: #1ac6ff;
+}
 article.content-inner .content {
   clear: both;
   padding: 20px;

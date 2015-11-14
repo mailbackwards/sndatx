@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+            
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -43,6 +44,7 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
+
 	<div id="main">
 	    <section id="topic-header" class="container-fluid">
 		    <div class="content-inner">
@@ -103,6 +105,30 @@
 		        </footer>
 		    </div>
 	    </section>
+	    
+	    <div class="container">
+	      <form class="form-horizontal">
+	        <div class="form-group">
+	          <label for="inputUsername" class="col-sm-2 control-label">Name</label>
+	          <div class="col-sm-10">
+	            <input type="text" class="form-control col-sm-10" id="inputUsername" name="inputUsername" placeholder="What's your name?">
+	          </div>
+	        </div>
+	        <div class="form-group has-feedback">
+	          <label for="inputReason" class="col-sm-2 control-label">Reason</label>
+	          <div class="col-sm-10">
+	            <input type="text" class="form-control col-sm-10" id="inputReason" name="inputReason" placeholder="How was this useful to you?">
+	          </div>
+	        </div>
+	        <div class="form-group has-feedback">
+	          <label for="inputLink" class="col-sm-2 control-label">Link</label>
+	          <div class="col-sm-10">
+	            <input type="url" class="form-control" id="inputLink" name="inputLink" placeholder="What's the URL?">
+	          </div>
+	        </div>
+	        <button type="submit" class="btn btn-default">Submit</button>
+	      </form>
+    	</div>
  
 	</div>
 	
@@ -112,7 +138,7 @@
 	        <p>&copy; Company 2015</p>
 	    </footer>
 	</div> <!-- /container -->
-	    
+	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>

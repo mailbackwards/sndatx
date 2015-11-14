@@ -7,13 +7,12 @@ function validateInputSize() {
     }
 };
 
-function appendShare(embed_copy, meta) {
-    var headerCopy = '<div class="col-lg-4 col-sm-12"><article class="tweet">'
+function appendShare(embed_copy, meta, html_class) {
+    var headerCopy = '<article class="'+html_class+'">'
     headerCopy += '<header><img src="http://fillmurray.com/25/25" />'
     headerCopy += '<p class="contributor">Recommended by <span class="name">'+meta['userName']+' '+meta['userLastname']+' on November 15, 2015.</p>'
     headerCopy += '<p>'+meta['reason']+'</p></header>'
-    headerCopy += '<div class="content">'+embed_copy+'</div></article></div>'
-    console.log(headerCopy);
+    headerCopy += '<div class="content">'+embed_copy+'</div></article>'
     $('article').last().append(headerCopy);
 }
 
@@ -35,7 +34,7 @@ function scrapeLink() {
             })
             .done(function(data) {
                 embed = data.html;
-                appendShare(embed, meta);
+                appendShare(embed, meta, 'video');
             })
     } else if (link.indexOf('twitter.com') > -1 || link.indexOf('t.co') > -1) {
         $.getJSON('http://api.twitter.com/1/statuses/oembed.json?callback=?&url='+link, {
@@ -44,13 +43,12 @@ function scrapeLink() {
             })
             .done(function(data) {
                 embed = data.html;
-                appendShare(embed, meta);
+                appendShare(embed, meta, 'tweet');
             });
     } else {
         embed = "<div><p>"+link+"</p></div>";
-        appendShare(embed, meta);
+        appendShare(embed, meta, 'story content-inner');
     }
-    //console.log(embed);
 };
 
 $(document).ready(function() {

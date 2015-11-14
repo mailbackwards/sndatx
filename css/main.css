@@ -62,6 +62,10 @@ article.content-inner  {
   border: 1px solid #eee;
   margin-bottom: 20px;
 }
+article.img,
+article.video {
+  margin-bottom: 0;
+}
 article img {
   float: left;
   margin-right: 10px;
@@ -96,4 +100,10 @@ article.content-inner p.quote {
 }
 blockquote {
   border-left: none;
+}
+.col-lg-4 .source,
+.col-lg-6 .source {
+  text-align: right;
+  color: #999;
+  font-style:italic;
 }

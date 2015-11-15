@@ -10,7 +10,7 @@ function validateInputSize() {
 function appendShare(embed_copy, meta, html_class) {
     var headerCopy = '<article class="'+html_class+'">'
     headerCopy += '<header><img src="http://fillmurray.com/25/25" />'
-    headerCopy += '<p class="contributor">Recommended by <span class="name">'+meta['userName']+' '+meta['userLastname']+' on November 15, 2015.</p>'
+    headerCopy += '<p class="contributor">Recommended by <span class="name">'+meta['userName']+' '+meta['userLastname']+' <span class="role contributor">contributor</span> on November 15, 2015.</p>'
     headerCopy += '<p>'+meta['reason']+'</p></header>'
     headerCopy += '<div class="content">'+embed_copy+'</div></article>'
     $('article').last().append(headerCopy);

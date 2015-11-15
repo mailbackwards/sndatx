@@ -46,9 +46,16 @@ function scrapeLink() {
                 appendShare(embed, meta, 'tweet');
             });
     } else {
-        embed = "<div><p>"+link+"</p></div>";
-        appendShare(embed, meta, 'story content-inner');
-    }
+        $.getJSON('http://api.embed.ly/1/oembed', {
+                key: 'd16b64773ea44778a3542f84f8020ce7',
+                url: link,
+            })
+            .done(function(data) {
+                embed = '<img src="'+data.thumbnail_url+'" height="180" width="180" /><h1>'+data.title+'</h1><p class="quote"></p>';
+                embed += '<p class="source">by '+data.author_name+', '+data.provider_name+'</p>'
+                appendShare(embed, meta, 'story content-inner')
+            });
+    };
 };
 
 $(document).ready(function() {

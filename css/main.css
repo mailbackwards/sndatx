@@ -151,6 +151,9 @@ blockquote {
 .like-counter {
   font-weight: bold;
 }
+span.favstar {
+  float: right;
+}
 
 @media (max-width: 1200px) {
   article.content-inner {

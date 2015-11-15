@@ -5,10 +5,13 @@ body {
   border-bottom: 1px solid #ff9900;
   background-color: #fff;
   margin-bottom: 0;
+  min-height: 90px;
 }
 .navbar-brand {
   background: url('../img/logo.png') no-repeat;
   width: 250px;
+  height: 70px;
+  margin-top: 10px;
 }
 h1 {
   margin-top: 0;

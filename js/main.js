@@ -10,6 +10,7 @@ function validateInputSize() {
 function appendShare(embed_copy, meta, html_class) {
     var headerCopy = '<article class="'+html_class+'">'
     headerCopy += '<header><img src="http://fillmurray.com/25/25" />'
+    headerCopy += '<span><a class="thumbsup"><i class="glyphicon glyphicon-star-empty"></i></a> <span class="like-counter">0</span></span>'
     headerCopy += '<p class="contributor">Recommended by <span class="name">'+meta['userName']+' '+meta['userLastname']+' <span class="role contributor">contributor</span> on November 15, 2015.</p>'
     headerCopy += '<p>'+meta['reason']+'</p></header>'
     headerCopy += '<div class="content">'+embed_copy+'</div></article>'
@@ -58,7 +59,24 @@ function scrapeLink() {
     };
 };
 
+function toggleFavorite() {
+    var icoElem = $(this)[0].firstChild;
+        counterElem = $(this)[0].nextElementSibling;
+    var count = parseInt(counterElem.innerHTML);
+    if ($.inArray('glyphicon-star-empty', icoElem.classList) > -1) {
+        // it's not favorited yet
+        count += 1;
+        icoElem.className = 'glyphicon glyphicon-star'
+    } else {
+        // it's already favorited
+        count -= 1;
+        icoElem.className = 'glyphicon glyphicon-star-empty'
+    }
+    counterElem.innerHTML = count.toString();
+};
+
 $(document).ready(function() {
     $('#inputReason').on('keyup', validateInputSize);
     $('#submitNewLink').on('click', scrapeLink);
+    $('.thumbsup').on('click', toggleFavorite);
 });

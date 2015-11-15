@@ -26,7 +26,7 @@ h1 {
 }
 #topic-header {
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background-color: #f9f9f9;
   border-bottom: 8px solid #ddd;
 }
@@ -51,6 +51,27 @@ h1 {
 }
 #topic-header .contributors img:hover {
   opacity: 0.8;
+}
+
+#filter {
+  text-align: right;
+  max-width:1170px;
+  margin: 0 auto 10px;
+}
+#filter ul li {
+  display: inline;	
+  padding: 0 10px;
+}
+#filter ul li.label {
+  color: #333;
+  font-weight: bold;
+  font-size: 15px;
+}
+#filter ul li a {
+  color: #999;
+}
+#filter ul li a.active {
+  color: #ff9900;
 }
 
 #emailMeLabel {

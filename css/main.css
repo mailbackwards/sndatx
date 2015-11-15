@@ -62,7 +62,7 @@ h1 {
   margin: 0 auto 10px;
 }
 #filter ul li {
-  display: inline;	
+  display: inline;
   padding: 0 10px;
 }
 #filter ul li.label {
@@ -139,9 +139,12 @@ blockquote {
   top: 8px;
   margin-left: 10px;
 }
-.row.two-up, 
+.row.two-up,
 .row.three-up {
   margin-bottom: 20px;
   margin-right: 10px;
   margin-left: 10px;
+}
+.like-counter {
+  font-weight: bold;
 }

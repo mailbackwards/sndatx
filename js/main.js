@@ -58,7 +58,24 @@ function scrapeLink() {
     };
 };
 
+function toggleFavorite() {
+    var icoElem = $(this)[0].firstChild;
+        counterElem = $(this)[0].nextElementSibling;
+    var count = parseInt(counterElem.innerHTML);
+    if ($.inArray('glyphicon-star-empty', icoElem.classList) > -1) {
+        // it's not favorited yet
+        count += 1;
+        icoElem.className = 'glyphicon glyphicon-star'
+    } else {
+        // it's already favorited
+        count -= 1;
+        icoElem.className = 'glyphicon glyphicon-star-empty'
+    }
+    counterElem.innerHTML = count.toString();
+};
+
 $(document).ready(function() {
     $('#inputReason').on('keyup', validateInputSize);
     $('#submitNewLink').on('click', scrapeLink);
+    $('.thumbsup').on('click', toggleFavorite);
 });
